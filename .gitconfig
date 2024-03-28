@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = bradleyboyuyang
+	email = bradleyboyuyang@gmail.com
+[init]
+        defaultBranch = master
+[alias]
+        graph = log --all --graph --decorate --oneline
+[core]
+	excludesfile = /home/bradleyboyuyang/.gitignore
