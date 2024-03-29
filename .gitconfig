@@ -1,11 +1,81 @@
-# This is Git's per-user configuration file.
+[init]
+	defaultBranch = master
+
 [user]
-# Please adapt and uncomment the following lines:
 	name = bradleyboyuyang
 	email = bradleyboyuyang@gmail.com
-[init]
-        defaultBranch = master
+[core]
+	excludesfile = ~/.gitignore .DS_Store
+	attributesfile = ~/.gitattributes
 [alias]
         graph = log --all --graph --decorate --oneline
-[core]
-	excludesfile = /home/bradleyboyuyang/.gitignore
+	last = log -1 HEAD
+	# View abbreviated SHA, description, and history graph of the latest 20 commits.
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	# Combine add and commit, default commit message "update"
+	ac = "!f() { git add -A && git commit -m \"${1:-update}\"; }; f"
+	# Combine add, commit, and push
+	# Use with caution, ``git push'' behavior follows push.default parameter
+	acp = "!f() { git add -A && git commit -m \"${1:-update}\" && git push; }; f"
+	
+	# List contributors with number of commits
+	contrib = shortlog --summary --numbered
+
+	# Edit configuration file with ease
+	edit = "!f() { vim ~/.gitconfig; }; f"
+
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+[push]
+	default = upstream
+
+[grep]
+	lineNumber = true
+
+[diff]
+	mnemonicPrefix = true
+	wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+	compactionHeuristic = true
+
+[branch]
+	# Show most recently changed branches first.
+	sort = -committerdate
+
+[color]
+	ui = auto
+
+[color "grep"]
+	match = cyan bold
+	selected = blue
+	context = normal
+	filename = magenta
+	linenumber = green
+	separator = yellow
+	function = blue
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[pretty]
+	line = "%C(auto)%h %<|(60,trunc)%s %C(green)%ad%C(auto)%d"
+	detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ad%n %C(auto)%d%n"
+
+
