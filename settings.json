@@ -1,0 +1,343 @@
+{
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "XeLaTeX*2",
+            "tools": [
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "PDFLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        },
+        {
+            "name": "LaTeXmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "LuaLaTeX",
+            "tools": [
+                "lualatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk"
+    ],
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "bracketPairColorizer.depreciation-notice": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.autoSave": "afterDelay",
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.colorCustomizations": {
+    "statusBar.background": "#98040e"
+    },
+    "remote.SSH.remotePlatform": {
+        "SGD_capital": "linux",
+        "SGD_data": "linux",
+        "bradleyboyu-basiccrypto-gu9zjfbx1iw.ssh.ws-us65.gitpod.io": "linux",
+        "Ali_server": "linux",
+        "bradleyboyuyang-autogpt-ovxy33s0mhq.ssh.ws-us96.gitpod.io": "linux",
+        "AliServer": "linux",
+        "*.gitpod.io": "linux"
+    },
+    "jupyter.generateSVGPlots": true,
+    "todohighlight.defaultStyle": {
+    
+    },
+    "todohighlight.keywords": [
+        "NOTE:",
+        {
+            "text": "NOTE:",
+            "backgroundColor": "#0000FF",
+            "color": "#FFFFFF",
+        }
+    ],
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false,
+        "yaml": false
+    },
+    "markdown-preview-enhanced.previewTheme": "atom-light.css",
+    "leetcode.endpoint": "leetcode",
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "kite.showWelcomeNotificationOnStartup": false,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-17.0.1",
+    "java.configuration.runtimes": [{
+        "name": "JavaSE-17",
+        "path": "C:\\Program Files\\Java\\jdk-17.0.1"
+    }
+],
+"code-runner.executorMap": {
+
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "python -u",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runhaskell",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "sml": "cd $dir && sml $fileName"
+},
+"tabnine.experimentalAutoImports": true,
+"[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"editor.unicodeHighlight.allowedLocales": {
+    "zh-hans": true,
+    "zh-hant": true
+},
+"doxdocgen.generic.authorEmail": "bradleyboyuyang@gmail.com",
+"doxdocgen.generic.authorName": "Yang Boyu",
+"remote.SSH.defaultExtensions": [
+    "gitpod.gitpod-remote-ssh"
+],
+"window.commandCenter": false,
+"workbench.iconTheme": "material-icon-theme",
+"python.condaPath": "C:\\Anaconda\\Scripts\\conda.exe",
+"[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[python]": {
+    "editor.formatOnType": true
+},
+"leetcode.workspaceFolder": "C:\\Users\\bradl\\.lc",
+"leetcode.defaultLanguage": "python3",
+"leetcode.filePath": {
+
+    "default": {
+        "folder": "",
+        "filename": "${id}.${kebab-case-name}.${ext}"
+    }
+},
+"settingsSync.ignoredSettings": [
+    "configurationSync.store"
+],
+"configurationSync.store": {
+    "url": "https://gitpod.io/code-sync",
+    "stableUrl": "https://gitpod.io/code-sync",
+    "insidersUrl": "https://gitpod.io/code-sync",
+    "canSwitch": false,
+    "authenticationProviders": {
+        "gitpod": {
+            "scopes": [
+                "function:accessCodeSyncStorage",
+                "function:getLoggedInUser",
+                "resource:default"
+            ]
+        }
+    }
+},
+"redhat.telemetry.enabled": true,
+"yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+],
+"sqltools.highlightQuery": false,
+"C_Cpp_Runner.cppStandard": "c++20",
+"C_Cpp_Runner.cStandard": "c17",
+"cmake.showOptionsMovedNotification": false,
+"cmake.configureOnOpen": false,
+"git.openRepositoryInParentFolders": "never",
+"workbench.colorTheme": "NarutoDark",
+"editor.accessibilitySupport": "off",
+"vim.vimrc.path": "E:\\BradleyProjects\\dotfiles",
+"github.copilot.editor.enableAutoCompletions": true,
+
+
+}
+
+
